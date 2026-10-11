@@ -39,13 +39,32 @@ SmartScreen shows an "unrecognized app" warning the first time it runs; choose *
 
 ## Linux
 
-x86_64. Every release carries three formats:
+x86_64. Install from the FlowReader package repositories, which update with the rest of the
+system:
+
+- **Debian and Ubuntu (apt)**:
+
+  ```sh
+  sudo install -d -m 0755 /etc/apt/keyrings
+  curl -fsSL https://flowreader.io/apt/flowreader-archive-keyring.asc | sudo gpg --dearmor -o /etc/apt/keyrings/flowreader.gpg
+  echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/flowreader.gpg] https://flowreader.io/apt stable main" | sudo tee /etc/apt/sources.list.d/flowreader.list
+  sudo apt update && sudo apt install flow-reader
+  ```
+
+- **Fedora (dnf)**:
+
+  ```sh
+  sudo curl -fsSLo /etc/yum.repos.d/flowreader.repo https://flowreader.io/rpm/flowreader.repo
+  sudo dnf install flow-reader
+  ```
+
+Or download a file from the release; every release carries three formats:
 
 - **AppImage**, on any distribution: download `FlowReader-linux-<version>-x86_64.AppImage`, make it
   executable (`chmod +x`) and run it. The AppImage updates itself.
 - **Debian and Ubuntu**: download `FlowReader-linux-<version>-amd64.deb` and install it with
   `sudo apt install ./FlowReader-linux-<version>-amd64.deb`.
-- **Fedora and other rpm-based systems**: download `FlowReader-linux-<version>-x86_64.rpm` and
+- **Fedora**: download `FlowReader-linux-<version>-x86_64.rpm` and
   install it with `sudo dnf install ./FlowReader-linux-<version>-x86_64.rpm`.
 
 The `.deb` and the `.rpm` do not update themselves: install the next release the same way.
