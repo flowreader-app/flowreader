@@ -39,18 +39,16 @@ SmartScreen shows an "unrecognized app" warning the first time it runs; choose *
 
 ## Linux
 
-x86_64.
+x86_64. Every release carries three formats:
 
-- **Debian and Ubuntu (apt)**: add the signed repository with the commands at
-  <https://flowreader.io/apt>, then `sudo apt install flowreader`. Updates arrive with `apt upgrade`.
-- **Snap**: `sudo snap install flowreader`
-- **Arch Linux (AUR)**: install `flowreader-bin` with your AUR helper, for example
-  `yay -S flowreader-bin`.
-- **Fedora and other rpm systems**: download `FlowReader-linux-<version>-x86_64.rpm` and install it
-  with `sudo dnf install ./FlowReader-linux-<version>-x86_64.rpm`.
-- **AppImage**: download `FlowReader-linux-<version>-x86_64.AppImage`, make it executable
-  (`chmod +x`) and run it. The AppImage updates itself.
-- A `.deb` for a manual install is attached to every release as well.
+- **AppImage**, on any distribution: download `FlowReader-linux-<version>-x86_64.AppImage`, make it
+  executable (`chmod +x`) and run it. The AppImage updates itself.
+- **Debian and Ubuntu**: download `FlowReader-linux-<version>-amd64.deb` and install it with
+  `sudo apt install ./FlowReader-linux-<version>-amd64.deb`.
+- **Fedora and other rpm-based systems**: download `FlowReader-linux-<version>-x86_64.rpm` and
+  install it with `sudo dnf install ./FlowReader-linux-<version>-x86_64.rpm`.
+
+The `.deb` and the `.rpm` do not update themselves: install the next release the same way.
 
 ## Verify a download
 
