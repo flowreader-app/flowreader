@@ -58,6 +58,14 @@ system:
   sudo dnf install flow-reader
   ```
 
+- **Snap**, on any distribution with snapd. The second command connects the desktop keyring, which
+  snaps do not get automatically; without it, signing in fails:
+
+  ```sh
+  sudo snap install flowreader
+  sudo snap connect flowreader:password-manager-service
+  ```
+
 Or download a file from the release; every release carries three formats:
 
 - **AppImage**, on any distribution: download `FlowReader-linux-<version>-x86_64.AppImage`, make it
